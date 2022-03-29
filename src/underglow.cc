@@ -48,22 +48,24 @@ uint8_t idx = 0;
 int8_t change = 1;
 
 #define MAX 16
-CRGB scratch[MAX];
 
+CRGB scratch[MAX];
 CRGB head;
 
 void loop() {
   EVERY_N_MILLISECONDS(1000 / FRAMES_PER_SECOND) {
+    sweepTail(scratch, MAX, head.setHue(gHue), idx, MAX);
+
+    Neon.write(Full, scratch, MAX);
+    Neon.update();
+
     if (idx >= MAX - 1) {
       change = -1;
     } else if (idx <= 0) {
       change = 1;
     }
 
-    gHue += 7;
-    sweepTail(scratch, MAX, head.setHue(gHue), idx, MAX);
     idx += change;
-    Neon.write(Full, scratch, MAX);
-    Neon.update();
+    gHue += 7;
   }
 }

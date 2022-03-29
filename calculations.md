@@ -11,7 +11,6 @@
 |            | 0.0009            |                  |                 |                  |                |
 |            | **Leach/Meter**   |                  |                 |                  |                |
 |            | 0.027             |                  |                 |                  |                |
-|            |                   |                  |                 |                  |                |
 
 *lengths are currently estimations. will not be over 2 meters per strip*
 ### breakdown by strip
