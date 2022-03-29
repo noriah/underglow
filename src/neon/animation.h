@@ -9,7 +9,6 @@
  * neon/animation.h - animation library
  */
 
-void sweepTail(CRGB *leds, pixel_t size, CRGB headPixel, pixel_t head,
-               pixel_t tailLength);
+void sweepTail(CRGB *leds, pixel_t size, CRGB headPixel, pixel_t head, pixel_t tailLength);
 
 #endif  // NEON_ANIMATION_H_

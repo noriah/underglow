@@ -12,8 +12,7 @@ pixel_t distanceFrom(pixel_t target, pixel_t point) {
   return target - point;
 }
 
-void sweepTail(CRGB *leds, pixel_t size, CRGB headPixel, pixel_t head,
-               pixel_t tailLength) {
+void sweepTail(CRGB *leds, pixel_t size, CRGB headPixel, pixel_t head, pixel_t tailLength) {
   for (pixel_t i = 0; i < size; i++)
     leds[i].nscale8(map(distanceFrom(head, i), 0, tailLength + 1, 255, 0));
 

@@ -14,22 +14,17 @@ CNeon Neon;
 void CNeon::init(pixel_t size) {
   led_data = new CRGB[size];
   total_size = size;
-  FastLED
-      .addLeds<NEON_TYPE, PIN_NEON_DATA, PIN_NEON_CLOCK, NEON_COLOR_ORDER>(
-          led_data, total_size)
+  FastLED.addLeds<NEON_TYPE, PIN_NEON_DATA, PIN_NEON_CLOCK, NEON_COLOR_ORDER>(led_data, total_size)
       .setCorrection(NEON_CORRECTION);
 }
 
-void CNeon::write(Section dst, CRGB *src, pixel_t length, pixel_t offset,
-                  bool reversed) {
-  if (SectionData[dst].count > 1)
-    return writeMulti(dst, src, length, offset, reversed);
+void CNeon::write(Section dst, CRGB *src, pixel_t length, pixel_t offset, bool reversed) {
+  if (SectionData[dst].count > 1) return writeMulti(dst, src, length, offset, reversed);
 
   writeSingle(dst, src, length, offset, reversed);
 }
 
-void CNeon::writeSingle(Section dst, CRGB *src, pixel_t length, pixel_t offset,
-                        bool reversed) {
+void CNeon::writeSingle(Section dst, CRGB *src, pixel_t length, pixel_t offset, bool reversed) {
   SectionValues data = SectionData[dst];
 
   reversed = reversed ? !data.reversed : data.reversed;
@@ -45,8 +40,7 @@ void CNeon::writeSingle(Section dst, CRGB *src, pixel_t length, pixel_t offset,
     led_data[data.index[0] + j] = src[offset + k];
 }
 
-void CNeon::writeMulti(Section dst, CRGB *src, pixel_t length, pixel_t offset,
-                       bool reversed) {
+void CNeon::writeMulti(Section dst, CRGB *src, pixel_t length, pixel_t offset, bool reversed) {
   SectionValues data = SectionData[dst];
 
   reversed = reversed ? !data.reversed : data.reversed;

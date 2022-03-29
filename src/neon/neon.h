@@ -27,8 +27,11 @@ struct CNeon {
   inline void write(Section dst, CRGB *src, pixel_t length, pixel_t offset) {
     write(dst, src, length, offset, false);
   }
-  void write(Section dst, CRGB *src, pixel_t length, pixel_t offset = 0,
-             bool reversed = false);
+
+  void write(Section dst, CRGB *src, pixel_t length, pixel_t offset = 0, bool reversed = false);
+
+  void writeSingle(Section dst, CRGB *src, pixel_t length, pixel_t offset, bool reversed);
+  void writeMulti(Section dst, CRGB *src, pixel_t length, pixel_t offset, bool reversed);
 
   inline uint8_t getBrightness() { return FastLED.getBrightness(); }
   inline void setBrightness(uint8_t level) { FastLED.setBrightness(level); }
@@ -43,11 +46,6 @@ struct CNeon {
       flush();
     }
   }
-
-  void writeSingle(Section dst, CRGB *src, pixel_t length, pixel_t offset,
-                   bool reversed);
-  void writeMulti(Section dst, CRGB *src, pixel_t length, pixel_t offset,
-                  bool reversed);
 
   inline void flush() { FastLED.show(); }
 };
