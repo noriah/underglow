@@ -44,7 +44,6 @@ void setup() {
 }
 
 uint8_t gHue = 0;
-
 uint8_t idx = 0;
 int8_t change = 1;
 

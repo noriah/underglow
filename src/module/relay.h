@@ -14,7 +14,6 @@ struct Relay {
   bool state;
 
   inline void init() { pinMode(pin, OUTPUT); }
-  inline bool getState() { return state; }
 
   inline void on() {
     if (!state) {

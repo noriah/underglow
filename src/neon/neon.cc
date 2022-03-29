@@ -22,9 +22,8 @@ void CNeon::init(pixel_t size) {
 
 void CNeon::write(Section dst, CRGB *src, pixel_t length, pixel_t offset,
                   bool reversed) {
-  if (SectionData[dst].count > 1) {
+  if (SectionData[dst].count > 1)
     return writeMulti(dst, src, length, offset, reversed);
-  }
 
   writeSingle(dst, src, length, offset, reversed);
 }
