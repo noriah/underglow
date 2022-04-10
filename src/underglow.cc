@@ -21,12 +21,6 @@
 Relay relay_left{PIN_RELAY_LEFT};
 
 #if defined(BOARD_TEENSY41)
-
-NeonStrip stripConfigs[] = {{STRIP_LEFT_INDEX, STRIP_LEFT_SIZE, LOW, LOW},
-                            {STRIP_FRONT_INDEX, STRIP_FRONT_SIZE, LOW, HIGH},
-                            {STRIP_RIGHT_INDEX, STRIP_RIGHT_SIZE, HIGH, LOW},
-                            {STRIP_BACK_INDEX, STRIP_BACK_SIZE, HIGH, HIGH}};
-
 Relay relay_front{PIN_RELAY_FRONT};
 Relay relay_right{PIN_RELAY_RIGHT};
 Relay relay_back{PIN_RELAY_BACK};
@@ -49,14 +43,12 @@ void setup() {
   Neon.init(NEON_ELEMENT_COUNT);
 
 #elif defined(BOARD_TEENSY41)
-  // Neon.init(STRIP_LEFT_SIZE, STRIP_FRONT_SIZE, STRIP_RIGHT_SIZE, STRIP_BACK_SIZE);
-  Neon.init(NEON_ELEMENT_COUNT, PIN_RELAY_SYSTEM1, PIN_RELAY_SYSTEM2, stripConfigs, STRIP_COUNT);
+  Neon.init(STRIP_LEFT_SIZE, STRIP_FRONT_SIZE, STRIP_RIGHT_SIZE, STRIP_BACK_SIZE);
 
 #endif
 
   Neon.setFPS(FRAMES_PER_SECOND);
-  // Neon.setBrightness(255);
-  Neon.brightness = 50;
+  Neon.setBrightness(50);
 
   relay_left.on();
 
@@ -78,8 +70,8 @@ CRGB head;
 
 void loop() {
   EVERY_N_MILLISECONDS(1000 / FRAMES_PER_SECOND) {
-    sweepTail(scratch, MAX, head.setHue(gHue), idx, MAX);
-    // fill_rainbow(scratch, MAX, gHue);
+    // sweepTail(scratch, MAX, head.setHue(gHue), idx, MAX);
+    fill_rainbow(scratch, MAX, gHue);
 
     Neon.write(Full, scratch, MAX);
     Neon.update();
@@ -91,6 +83,6 @@ void loop() {
     }
 
     idx += change;
-    gHue += 3;
+    gHue += 10;
   }
 }

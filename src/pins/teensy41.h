@@ -23,8 +23,6 @@
 /////////////
 // relay pins
 // sides relay
-#define PIN_RELAY_SYSTEM1 28
-#define PIN_RELAY_SYSTEM2 29
 #define PIN_RELAY_LEFT 5
 #define PIN_RELAY_FRONT 4
 #define PIN_RELAY_RIGHT 3
@@ -34,12 +32,12 @@
 // RGB LED Pins
 // data
 #define PIN_NEON_DATA 26
-#define PIN_NEON_DATA2 6
+#define PIN_NEON_DATA2 28
 #define PIN_NEON_DATA3 11
 #define PIN_NEON_DATA4 31
 // clock
 #define PIN_NEON_CLOCK 27
-#define PIN_NEON_CLOCK2 7
+#define PIN_NEON_CLOCK2 29
 #define PIN_NEON_CLOCK3 13
 #define PIN_NEON_CLOCK4 32
 

@@ -12,32 +12,20 @@
 #include "common/types.h"
 #include "neon/sections.h"
 
-struct NeonStrip {
-  pixel_t index;
-  pixel_t size;
-  uint8_t cs1_state;
-  uint8_t cs2_state;
-};
-
 struct CNeon {
   CRGB *led_data;
   pixel_t total_size;
 
-  CLEDController **led_controllers;
-  uint8_t strip_count;
-
-  pin_t cs1_pin;
-  pin_t cs2_pin;
-
-  uint8_t *cs1_state;
-  uint8_t *cs2_state;
-
-  uint8_t brightness;
-
   ulong last_update = 0;
   ulong flush_interval = 0;
 
-  void init(pixel_t size, pin_t cs1, pin_t cs2, NeonStrip *strips, uint8_t count);
+#if defined(BOARD_TEENSY40)
+  void init(pixel_t size);
+
+#elif defined(BOARD_TEENSY41)
+  void init(pixel_t sizeLeft, pixel_t sizeFront, pixel_t sizeRight, pixel_t sizeBack);
+
+#endif
 
   inline void write(Section dst, CRGB *src, pixel_t length, bool reversed) { write(dst, src, length, 0, reversed); }
   inline void write(Section dst, CRGB *src, pixel_t length, pixel_t offset) { write(dst, src, length, offset, false); }
@@ -46,7 +34,8 @@ struct CNeon {
   void writeSingle(Section dst, CRGB *src, pixel_t length, pixel_t offset, bool reversed);
   void writeMulti(Section dst, CRGB *src, pixel_t length, pixel_t offset, bool reversed);
 
-  void flush();
+  inline void setBrightness(uint8_t brightness) { FastLED.setBrightness(brightness); }
+  inline uint8_t getBrightness() { return FastLED.getBrightness(); }
 
   inline ulong getFPS() { return 1000 / flush_interval; }
   inline void setFPS(ulong fps) { flush_interval = 1000 / fps; }
@@ -58,6 +47,8 @@ struct CNeon {
       flush();
     }
   }
+
+  inline void flush() { FastLED.show(); }
 };
 
 extern CNeon Neon;
