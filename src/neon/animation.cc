@@ -6,9 +6,8 @@
 #include "common/types.h"
 
 pixel_t distanceFrom(pixel_t target, pixel_t point) {
-  if (point > target) {
-    return point - target;
-  }
+  if (point > target) return point - target;
+
   return target - point;
 }
 

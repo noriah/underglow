@@ -16,10 +16,10 @@ struct LightSensor {
 
   inline void init() { pinMode(pin, INPUT); }
 
+  inline uint8_t read8Bit() { return map(readInternal(), 0, 1023, 0, UINT8_MAX); }
+  inline uint16_t read16Bit() { return readInternal(); }
   inline float readPercent() { return (float)readInternal() / 1023.0; }
   inline float readFloat() { return (float)readInternal(); }
-  inline uint16_t read16Bit() { return (uint16_t)readInternal(); }
-  inline uint8_t read8Bit() { return map(readInternal(), 0, 1023, 0, UINT8_MAX); }
 
   inline int readInternal() { return analogRead(pin); }
 };
