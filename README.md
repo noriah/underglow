@@ -1,6 +1,6 @@
 # LED underglow
 
-LED underglow project for my Civic FK8 Type-R
+Car LED underglow project
 
 ## planned features
 - cabin control/indication
