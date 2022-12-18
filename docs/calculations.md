@@ -14,15 +14,17 @@
 
 # Parts breakdown
 
-| Part       | Voltage (V) | Max Current (A)  | Qty | Total Current (A) |
-| ---------- | ----------- | ---------------- | --- | ----------------- |
-| Teensy 4.1 | 3.3         | 0.1              | 1   | 0.1               |
-| NEO-6M     | 3.3         | 0.067            | 1   | 0.067             |
-| HC-05      | 3.3         | 0.1              | 1   | 0.1               |
-| TEMT6000   | 3.3         | 0.02             | 1   | 0.02              |
-| TJA1050    | 5.0         | 0.075            | 2   | 0.15              |
-| DotStar    | 5.0         | 0.06             | 228 | 13.68             |
-| LED        | 5.0         | 0.025 (estimate) | 2   | 0.05              |
+| Part        | Voltage (V) | Max Current (A)  | Qty | Total Current (A) |
+| ----------- | ----------- | ---------------- | --- | ----------------- |
+| Teensy 4.1  | 3.3         | 0.1              | 1   | 0.1               |
+| LTC1155IN   | 5.0         | 0.000085         | 2   | 0.00017           |
+| SN65LBC172N | 5.0         | 0.007            | 2   | 0.014             |
+| NEO-6M      | 3.3         | 0.067            | 1   | 0.067             |
+| HC-05       | 3.3         | 0.1              | 1   | 0.1               |
+| TEMT6000    | 3.3         | 0.02             | 1   | 0.02              |
+| TJA1050     | 5.0         | 0.075            | 2   | 0.15              |
+| DotStar     | 5.0         | 0.06             | 228 | 13.68             |
+| LED         | 5.0         | 0.025 (estimate) | 2   | 0.05              |
 
 
 *lengths are currently estimations. will not be over 2 meters per strip*
