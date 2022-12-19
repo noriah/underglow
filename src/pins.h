@@ -27,16 +27,18 @@
 
 ///////////////
 // RGB LED Pins
-// data
-#define GPIO_NEON_DATA1_PIN 26
-#define GPIO_NEON_DATA2_PIN 28
-#define GPIO_NEON_DATA3_PIN 11
-#define GPIO_NEON_DATA4_PIN 31
-// clock
-#define GPIO_NEON_CLOCK1_PIN 27
-#define GPIO_NEON_CLOCK2_PIN 29
-#define GPIO_NEON_CLOCK3_PIN 13
-#define GPIO_NEON_CLOCK4_PIN 32
+// left
+#define GPIO_NEON_DATA1_PIN 10
+#define GPIO_NEON_CLOCK1_PIN 11
+// front
+#define GPIO_NEON_DATA2_PIN 12
+#define GPIO_NEON_CLOCK2_PIN 24
+// right
+#define GPIO_NEON_DATA3_PIN 26
+#define GPIO_NEON_CLOCK3_PIN 27
+// back
+#define GPIO_NEON_DATA4_PIN 28
+#define GPIO_NEON_CLOCK4_PIN 29
 
 ///////////////
 // light sensor
@@ -70,12 +72,12 @@
 //////////
 // CAN bus
 // medium speed tx
-#define PIN_CAN_MS_TX 3
+#define PIN_CAN_MS_TX 1
 // medium speed rx
-#define PIN_CAN_MS_RX 2
+#define PIN_CAN_MS_RX 0
 // high speed tx
-#define PIN_CAN_HS_TX 29
+#define PIN_CAN_HS_TX 22
 // high speed rx
-#define PIN_CAN_HS_RX 30
+#define PIN_CAN_HS_RX 23
 
 #endif  // PINS_H_

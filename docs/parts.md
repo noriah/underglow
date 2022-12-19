@@ -6,8 +6,8 @@
 | Part          | Type      | Description                         | Datasheet                       | Store                 | Unit Cost  | Qty       | Cost    |
 | ------------- | --------- | ----------------------------------- | ------------------------------- | --------------------- | ---------- | --------- | ------- |
 | Teensy 4.1    | McroCntrl | ARM Cortex-M7 at 600 MHz MC         | [iMX RT1060 (PJRC)][teensy41]   | [PJRC][teensy41s]     | $31.50     | 1         | $31.50  |
-| SN65LBC172N   | IC        | RS-422/RS-485 Quad LP Diff Driver   | [SN65LBC172 (TI)][sn65lbc172]   | [Mouser][sn65lbc127s] | $8.28      | 2         | $16.56  |
-| SN65LBC175N   | IC        | RS-422/RS-485 Quad LP Diff Receiver | [SN65LBC175 (TI)][sn65lbc175]   | [Mouser][sn65lbc125s] | $6.22      | 4         | $24.88  |
+| SN65LBC172N   | IC        | RS-422/RS-485 Quad LP Diff Driver   | [SN65LBC172 (TI)][sn65lbc172]   | [Mouser][sn65lbc172s] | $8.28      | 2         | $16.56  |
+| SN65LBC175N   | IC        | RS-422/RS-485 Quad LP Diff Receiver | [SN65LBC175 (TI)][sn65lbc175]   | [Mouser][sn65lbc175s] | $6.22      | 4         | $24.88  |
 | SN74AHC125    | IC        | Quad Bus Buffer Gate CMOS           | [SNx4AHC125 (TI)][sn74ahc125]   | [Mouser][sn74ahc125s] | $0.64      | 2         | $1.28   |
 | LTC1155IN8    | IC        | Gate Driver Dual High Side          | [LTC1155 (Analog)][ltc1155]     | [Mouser][ltc1155s]    | $12.49     | 2         | $24.98  |
 | FQP30N06      | IC        | 32A 60V N-Channel MOSFET            | [FQP30N06L (Mouser)][fqp30n06l] | [Mouser][fqp30n06ls]  | $1.97      | 4         | $7.88   |

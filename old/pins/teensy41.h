@@ -30,16 +30,18 @@
 
 ///////////////
 // RGB LED Pins
-// data
-#define PIN_NEON_DATA 26
-#define PIN_NEON_DATA2 28
-#define PIN_NEON_DATA3 11
-#define PIN_NEON_DATA4 31
-// clock
-#define PIN_NEON_CLOCK 27
-#define PIN_NEON_CLOCK2 29
-#define PIN_NEON_CLOCK3 13
-#define PIN_NEON_CLOCK4 32
+// left
+#define PIN_NEON_DATA 9
+#define PIN_NEON_CLOCK 10
+// front
+#define PIN_NEON_DATA2 11
+#define PIN_NEON_CLOCK2 12
+// right
+#define PIN_NEON_DATA3 24
+#define PIN_NEON_CLOCK3 25
+// back
+#define PIN_NEON_DATA4 26
+#define PIN_NEON_CLOCK4 27
 
 ///////////////
 // light sensor
