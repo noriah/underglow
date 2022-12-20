@@ -2,6 +2,9 @@
 
 Car LED underglow project
 
+- [Parts List](/docs/parts.md)
+- [Power Calculations](/docs/calculations.md)
+
 ## planned features
 - cabin control/indication
   - system power / state
